@@ -1,0 +1,10 @@
+﻿body { padding-top: 24px; background-color: #222; }
+h1 { font-family: 'raleway'; font-weight: 900; }
+h2, h3 { font-family: 'raleway'; font-weight: 300; }
+.navbar { height: 60px; }
+.container-fluid { margin-top: 36px }
+.cover-wrapper { background-size: cover; background-position: center;  background-repeat: no-repeat; }
+.cover { min-height: 600px; min-height: 100vh; }
+.box { margin: 15% 0; padding: 48px; background-color: #FFF; }
+.box p, ul { font-family: 'open sans'; font-size: 16px; }
+.box li { padding-top: 12px; }
