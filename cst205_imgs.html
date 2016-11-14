@@ -510,7 +510,7 @@ addTextWithStyle(
                 <div class="col-sm-12">
 		    <div style="color:white">
                        	<h3>Line Art</h3>
-                        <p>This filter converts an image into something resembling a line drawing or charcoal sketch.  This is achieved by comparing the luminance of each pixel (where luminance is defined as the weighted average used in the Better Black & White filter above) to the luminance of its neighbor pixels.  If the difference between a pixel's luminance and its neighboring pixels' luminance is outside of the provided threshold value, the pixel is made black, otherwise the pixel is made white.</p>
+                        <p>This filter converts an image into something resembling a line drawing or charcoal sketch.  This is achieved by comparing the luminance of each pixel (where luminance is defined as the weighted average used in the Better Black & White filter above) to the luminance of its neighbor pixels.  If the difference between a pixel's luminance and its neighboring pixels' luminance is outside of the provided threshold value, the pixel is made black, otherwise the pixel is made white.  Using a lower threshold results in an image more similar to a charcoal sketch, where subtle luminance changes yield a swath of fine dots.  Higher threshold values create something more like a line drawing, where only particularly sharp luminance changes are reflected in the final image.</p>
 			<p style="text-align:center">
 			    <img src="cst205/img/lineArt-original.jpg" /><br/>
 			    <b>Before</b>
