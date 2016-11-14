@@ -1,0 +1,553 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>CST 205: Image Portfolio</title>
+    <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+        
+    <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"
+        integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Raleway:300,900">
+
+    <link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button"
+              class="navbar-toggle"
+              data-toggle="collapse"
+              data-target="#navbar"
+              aria-expanded="false"
+              aria-controls="navbar">
+            <span class="sr-only">Toggle Navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav" style="padding: 3px 0 0; font-family: 'raleway'; font-weight: 900; font-size: 16px">
+            <li><a href="index.html">ABOUT</a></li>
+            <li><a href="core.html">CORE MLOs</a></li>
+            <li><a href="concentration.html">CONCENTRATION MLOs</a></li>
+            <li><a href="final.html">FINAL MLOs</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="https://github.com/theotteraaron" style="padding: 12px 12px 0"><i class="fa fa-2x fa-github"></i></a></li>
+            <li><a href="https://linkedin.com/in/aarondgordon" style="padding: 12px 12px 0"><i class="fa fa-2x fa-linkedin"></i></a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-sm-12">
+		    <div style="color:white">
+			<h1>CST 205: Image Portfolio</h1>
+                       	<h3>Rose-Colored Glasses</h3>
+                        <p>About this item</p>
+			<p style="text-align:center">
+			    <img src="cst205/img/roseColoredGlasses-original.jpg" /><br/>
+			    <b>Before</b>
+			</p>
+			<p style="text-align:center">
+			    <img src="cst205/img/roseColoredGlasses.jpg" /><br/>
+			    <b>After</b>
+			</p>
+			<p>
+			    <pre>
+def roseColoredGlasses(pic):
+  rRose = 255
+  gRose = 63
+  bRose = 127
+  multiply(pic, rRose, gRose, bRose)
+
+def multiply(pic, r, g, b):
+  for p in getPixels(pic):
+    setRed(p, getRed(p) * r / 255)
+    setGreen(p, getGreen(p) * g / 255)
+    setBlue(p, getBlue(p) * b / 255)
+  repaint(pic)
+			    </pre>
+			</p>
+		    </div>
+                </div>
+            </div>
+
+	    <div class="row">
+                <div class="col-sm-12">
+		    <div style="color:white">
+                       	<h3>Negative</h3>
+                        <p>About this item</p>
+			<p style="text-align:center">
+			    <img src="cst205/img/negative-original.jpg" /><br/>
+			    <b>Before</b>
+			</p>
+			<p style="text-align:center">
+			    <img src="cst205/img/negative.jpg" /><br/>
+			    <b>After</b>
+			</p>
+			<p>
+			    <pre>
+def invert(p):
+  return 255 - p
+
+def makeNegative(pic):
+  for p in getPixels(pic):
+    setRed(p, invert(getRed(p)))
+    setGreen(p, invert(getGreen(p)))
+    setBlue(p, invert(getBlue(p)))
+  repaint(pic)
+			    </pre>
+			</p>
+		    </div>
+                </div>
+            </div>
+
+	    <div class="row">
+                <div class="col-sm-12">
+		    <div style="color:white">
+                       	<h3>Better Black & White</h3>
+                        <p>About this item</p>
+			<p style="text-align:center">
+			    <img src="cst205/img/betterBnW-original.jpg" /><br/>
+			    <b>Before</b>
+			</p>
+			<p style="text-align:center">
+			    <img src="cst205/img/betterBnW.jpg" /><br/>
+			    <b>After</b>
+			</p>
+			<p>
+			    <pre>
+def luminance(r, g, b):
+  return r*0.299 + g*0.587 + b*0.114
+
+def betterBnW(pic):
+  for p in getPixels(pic):
+    l = luminance(getRed(p), getGreen(p), getBlue(p))
+    setRed(p, l)
+    setGreen(p, l)
+    setBlue(p, l)
+  repaint(pic)
+			    </pre>
+			</p>
+		    </div>
+                </div>
+            </div>
+
+	    <div class="row">
+                <div class="col-sm-12">
+		    <div style="color:white">
+                       	<h3>Bottom-to-Top Mirror</h3>
+                        <p>About this item</p>
+			<p style="text-align:center">
+			    <img src="cst205/img/mirrorHorizontalInverse-original.jpg" /><br/>
+			    <b>Before</b>
+			</p>
+			<p style="text-align:center">
+			    <img src="cst205/img/mirrorHorizontalInverse.jpg" /><br/>
+			    <b>After</b>
+			</p>
+			<p>
+			    <pre>
+def mirrorHorizontalInverse(pic):
+  height = getHeight(pic)
+  for x in range(0, getWidth(pic)):
+    for y in range(0, height//2):
+      dst = getPixel(pic, x, y)
+      src = getPixel(pic, x, height - 1 - y)
+      setColor(dst, getColor(src))
+  repaint(pic)
+			    </pre>
+			</p>
+		    </div>
+                </div>
+            </div>
+
+	    <div class="row">
+                <div class="col-sm-12">
+		    <div style="color:white">
+                       	<h3>Shrink</h3>
+                        <p>About this item</p>
+			<p style="text-align:center">
+			    <img src="cst205/img/shrink-original.jpg" /><br/>
+			    <b>Before</b>
+			</p>
+			<p style="text-align:center">
+			    <img src="cst205/img/shrink.jpg" /><br/>
+			    <b>After</b>
+			</p>
+			<p>
+			    <pre>
+def shrink(pic):
+  copy = makeEmptyPicture(getWidth(pic)//2, getHeight(pic)//2)
+  for x in range(0, getWidth(copy)):
+    for y in range(0, getHeight(copy)):
+      dst = getPixel(copy, x, y)
+      src = getPixel(pic, min(x*2, getWidth(pic)), min(y*2, getHeight(pic)))
+      setColor(dst, getColor(src))
+  return copy
+			    </pre>
+			</p>
+		    </div>
+                </div>
+            </div>
+
+	    <div class="row">
+                <div class="col-sm-12">
+		    <div style="color:white">
+                       	<h3>Collage</h3>
+                        <p>About this item</p>
+			<p style="text-align:center">
+			    <img src="cst205/img/collage.jpg" />
+			</p>
+			<p>
+			    <pre>
+def noBlue(pic):
+  for p in getPixels(pic):
+    setBlue(p, 0)
+  return pic
+
+def lessRed(pic, percent):
+  scalar = (100 - percent) / 100
+  for p in getPixels(pic):
+    setRed(p, getRed(p) * scalar)
+  return pic
+
+def roseColoredGlasses(pic):
+  rRose = 255
+  gRose = 63
+  bRose = 127
+  pic = multiply(pic, rRose, gRose, bRose)
+  return pic
+
+def multiply(pic, r, g, b):
+  for p in getPixels(pic):
+    setRed(p, getRed(p) * r / 255)
+    setGreen(p, getGreen(p) * g / 255)
+    setBlue(p, getBlue(p) * b / 255)
+  return pic
+  
+def luminance(r, g, b):
+  return r*0.299 + g*0.587 + b*0.114
+
+def betterBnW(pic):
+  for p in getPixels(pic):
+    l = luminance(getRed(p), getGreen(p), getBlue(p))
+    setRed(p, l)
+    setGreen(p, l)
+    setBlue(p, l)
+  return pic
+
+def mirrorVertical(pic):
+  width = getWidth(pic)
+  for x in range(width//2, width):
+    for y in range(0, getHeight(pic)):
+      dst = getPixel(pic, x, y)
+      src = getPixel(pic, width - 1 - x, y)
+      setColor(dst, getColor(src))
+  return pic
+
+background = makePicture("...background.jpg")
+boots = makePicture("...boots.jpg")
+campfire = makePicture("...campfire.jpg")
+foggy = makePicture("...foggy.jpg")
+forest = makePicture("...forest.jpg")
+moose = makePicture("...moose.jpg")
+stove = makePicture("...stove.jpg")
+tent = makePicture("...tent.jpg")
+
+collage = copyPlace(betterBnW(boots), background, 400, 200)
+collage = copyPlace(noBlue(campfire), collage, 200, 1000)
+collage = copyPlace(foggy, collage, 400, 1800)
+collage = copyPlace(forest, collage, 2000, 200)
+collage = copyPlace(mirrorVertical(moose), collage, 1200, 1050)
+collage = copyPlace(lessRed(stove, 50), collage, 2000, 1800)
+collage = copyPlace(roseColoredGlasses(tent), collage, 2200, 1000)
+			    </pre>
+			</p>
+		    </div>
+                </div>
+            </div>
+
+	    <div class="row">
+                <div class="col-sm-12">
+		    <div style="color:white">
+                       	<h3>Red-Eye Reduction</h3>
+                        <p>About this item</p>
+			<p style="text-align:center">
+			    <img src="cst205/img/redeye-original.jpg" /><br/>
+			    <b>Before</b>
+			</p>
+			<p style="text-align:center">
+			    <img src="cst205/img/redeye.jpg" /><br/>
+			    <b>After</b>
+			</p>
+			<p>
+			    <pre>
+def correctRedEye(pic, xCenter, yCenter, radius, thresh, amount):
+  for x in range(xCenter - radius, xCenter + radius):
+    for y in range(yCenter - radius, yCenter + radius):
+      if math.sqrt(math.pow(float(x - xCenter), 2) + math.pow(float(y - yCenter), 2)) <= radius:
+        p = getPixel(pic, x, y)
+        if distance(getColor(p), red) < thresh * math.sqrt(3 * math.pow(255, 2)):
+          setColor(p, makeColor((1 - amount) * getRed(p), getGreen(p), getBlue(p)))
+  return pic
+  
+"""  
+Values Used:
+
+Number of Corrections: 2
+Eye X-Center: 160
+Eye Y-Center: 275
+Eye Radius: 10
+Red Selection Threshold (0-1): 0.4
+Red Reduction Amount (0-1): 1
+Eye X-Center: 257
+Eye Y-Center: 280
+Eye Radius: 10
+Red Selection Threshold (0-1): 0.4
+Red Reduction Amount (0-1): 1
+"""
+
+pic = makePicture(pickAFile())
+explore(pic)
+
+for i in range(0, input("Number of Corrections: ")):
+  pic = correctRedEye(
+    pic,
+    int(input("Eye X-Center: ")),
+    int(input("Eye Y-Center: ")),
+    int(input("Eye Radius: ")),
+    float(input("Red Selection Threshold (0-1): ")),
+    float(input("Red Reduction Amount (0-1): ")))
+  show(pic)
+			    </pre>
+			</p>
+		    </div>
+                </div>
+            </div>
+
+	    <div class="row">
+                <div class="col-sm-12">
+		    <div style="color:white">
+                       	<h3>Posterize</h3>
+                        <p>About this item</p>
+			<p style="text-align:center">
+			    <img src="cst205/img/posterize-original.jpg" /><br/>
+			    <b>Before</b>
+			</p>
+			<p style="text-align:center">
+			    <img src="cst205/img/posterize.jpg" /><br/>
+			    <b>After</b>
+			</p>
+			<p>
+			    <pre>
+def eightBitFloor(val):
+  if val < 64:
+    return 31
+  if val < 128:
+    return 95
+  if val < 192:
+    return 159
+  else:
+    return 223
+
+def posterize(pic):
+  for p in getPixels(pic):
+    setRed(p, eightBitFloor(getRed(p)))
+    setGreen(p, eightBitFloor(getGreen(p)))
+    setBlue(p, eightBitFloor(getBlue(p)))
+  return pic
+			    </pre>
+			</p>
+		    </div>
+                </div>
+            </div>
+
+	    <div class="row">
+                <div class="col-sm-12">
+		    <div style="color:white">
+                       	<h3>Green Screen</h3>
+                        <p>About this item</p>
+			<p style="text-align:center">
+			    <img src="cst205/img/greenscreen-original1.jpg" /><br/>
+			    <b>Before (Background)</b>
+			</p>
+			<p style="text-align:center">
+			    <img src="cst205/img/greenscreen-original2.jpg" /><br/>
+			    <b>Before (Foreground)</b>
+			</p>
+			<p style="text-align:center">
+			    <img src="cst205/img/greenscreen.jpg" /><br/>
+			    <b>After</b>
+			</p>
+			<p>
+			    <pre>
+def chromaKey(foreground, background, key, thresh):
+  copy = makeEmptyPicture(getWidth(foreground), getHeight(background))
+  for x in range(0, getWidth(foreground)):
+    for y in range(0, getHeight(foreground)):
+      srcFore = getPixel(foreground, x, y)
+      srcBack = getPixel(background, x, y)
+      dst = getPixel(copy, x, y)
+      if distance(getColor(srcFore), key) < thresh * math.sqrt(3 * math.pow(255, 2)):
+        setColor(dst, getColor(srcBack))
+      else:
+        setColor(dst, getColor(srcFore))
+  return copy
+
+foreground = makePicture(pickAFile())
+background = makePicture(pickAFile())
+explore(foreground)
+output = input("Save To (Escape Backslashes): ")
+key = pickAColor()
+
+while True:
+  thresh = input("Threshold (-1 to Save): ")
+  if thresh < 0:
+    break
+  pic = chromaKey(foreground, background, key, thresh)
+  show(pic)
+  
+writePictureTo(pic, output)
+			    </pre>
+			</p>
+		    </div>
+                </div>
+            </div>
+
+	    <div class="row">
+                <div class="col-sm-12">
+		    <div style="color:white">
+                       	<h3>Thanksgiving Card</h3>
+                        <p>About this item</p>
+			<p style="text-align:center">
+			    <img src="cst205/img/card.jpg" />
+			</p>
+			<p>
+			    <pre>
+def makeStencil(pic, color, threshold):
+  expandedThreshold = threshold * (math.sqrt(math.pow(255, 2) + math.pow(255, 2) + math.pow(255, 2)))
+  stencil = makeEmptyPicture(getWidth(pic), getHeight(pic))
+  for x in range(0, getWidth(pic)):
+    for y in range(0, getHeight(pic)):
+      src = getPixel(pic, x, y)
+      dst = getPixel(stencil, x, y)
+      if distance(getColor(src), getColor(dst)) < expandedThreshold:
+        setColor(dst, black)
+      else:
+        setColor(dst, white)
+  return stencil
+  
+def applyStencil(pic, stencil, color, xOffset, yOffset, scale):
+  invScale = int(math.floor(1 / scale));
+  for x in range(0, getWidth(stencil), invScale):
+    for y in range(0, getHeight(stencil), invScale):
+      if getColor(getPixel(stencil, x, y)) == white:
+        xPrime = xOffset + int(x / invScale)
+        if xPrime >= 0 and xPrime < getWidth(pic):
+          yPrime = yOffset + int(y / invScale)
+          if yPrime >= 0 and yPrime < getHeight(pic):  
+            setColor(getPixel(pic, xPrime, yPrime), color)
+
+def paintLeaves(pic, stencil, minCount, maxCount):
+  for i in range(0, random.randrange(minCount, maxCount)):
+    applyStencil(
+      pic,
+      stencil,
+      makeColor(255, random.randrange(0, 255), 0),
+      random.randrange(-getWidth(stencil), getWidth(card) + getWidth(stencil)),
+      random.randrange(-getHeight(stencil), getHeight(card) + getHeight(stencil)),
+      random.uniform(0.2, 0.5))
+
+
+leaf1Stencil = makeStencil(makePicture("...leaf1.jpg"), white, 0.25)
+leaf2Stencil = makeStencil(makePicture("...leaf2.jpg"), white, 0.25)
+leaf3Stencil = makeStencil(makePicture("...leaf3.png"), white, 0.15)
+leaf4Stencil = makeStencil(makePicture("...leaf4.png"), white, 0.25)
+
+card = makeEmptyPicture(2100, 1500)
+
+paintLeaves(card, leaf1Stencil, 25, 50)
+paintLeaves(card, leaf2Stencil, 25, 50)
+paintLeaves(card, leaf3Stencil, 25, 50)
+paintLeaves(card, leaf4Stencil, 25, 50)
+paintLeaves(card, leaf1Stencil, 25, 50)
+paintLeaves(card, leaf2Stencil, 25, 50)
+paintLeaves(card, leaf3Stencil, 25, 50)
+paintLeaves(card, leaf4Stencil, 25, 50)
+
+addTextWithStyle(
+  card,
+  275,
+  700,
+  "Happy Thanksgiving!",
+  makeStyle("serif", italic, 180),
+  black)
+			    </pre>
+			</p>
+		    </div>
+                </div>
+            </div>
+
+	    <div class="row">
+                <div class="col-sm-12">
+		    <div style="color:white">
+                       	<h3>Line Art</h3>
+                        <p>About this item</p>
+			<p style="text-align:center">
+			    <img src="cst205/img/lineArt-original.jpg" /><br/>
+			    <b>Before</b>
+			</p>
+			<p style="text-align:center">
+			    <img src="cst205/img/lineArt.jpg" /><br/>
+			    <b>After</b>
+			</p>
+			<p>
+			    <pre>
+def luminance(p):
+  return getRed(p)*0.299 + getGreen(p)*0.587 + getBlue(p)*0.114
+  
+def lineArt(pic, threshold):
+  for x in range(0, getWidth(pic) - 1):
+    for y in range(0, getHeight(pic) - 1):
+      p = getPixel(pic, x, y)
+      r = getPixel(pic, x+1, y)
+      b = getPixel(pic, x, y+1)
+      if abs(luminance(p) - luminance(r)) > threshold and abs(luminance(p) - luminance(b)) > threshold:
+        setColor(p, black)
+      else:
+        setColor(p, white)
+  return pic
+
+pic = lineArt(makePicture(pickAFile()), 2.5)
+			    </pre>
+			</p>
+		    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</body>
+</html>
