@@ -60,7 +60,7 @@
 		    <div style="color:white">
 			<h1>CST 205: Image Portfolio</h1>
                        	<h3>Rose-Colored Glasses</h3>
-                        <p>About this item</p>
+                        <p>This filter replicates the world as seen through a pair of rose-tinted glasses.  It works by individually multiplying the red, green and blue channels of the original image by ratios in the 0-1 range which correspond to the RGB values of a "rose" color.  This effectively simulates the filtering of different wavelengths of light through colored glass.</p>
 			<p style="text-align:center">
 			    <img src="cst205/img/roseColoredGlasses-original.jpg" /><br/>
 			    <b>Before</b>
@@ -93,7 +93,7 @@ def multiply(pic, r, g, b):
                 <div class="col-sm-12">
 		    <div style="color:white">
                        	<h3>Negative</h3>
-                        <p>About this item</p>
+			<p>This filter inverts the color values of an image, producing an effect similar to that of a film negative.  It works by subtracting the values of the red, green and blue channels from 255, the maximum value of each of the channels.</p>
 			<p style="text-align:center">
 			    <img src="cst205/img/negative-original.jpg" /><br/>
 			    <b>Before</b>
@@ -123,7 +123,7 @@ def makeNegative(pic):
                 <div class="col-sm-12">
 		    <div style="color:white">
                        	<h3>Better Black & White</h3>
-                        <p>About this item</p>
+                        <p>A naive implementation of black and white simply averages the values of the red, green and blue channels of a pixel for each pixel in an image.  While this approach works, it does not accurately model the luminance values one would expect to see in a chemically exposed black and white photograph.  Taking the weighted average of the three color channels, using coefficients derived from human perception, yields a much more convincing result.</p>
 			<p style="text-align:center">
 			    <img src="cst205/img/betterBnW-original.jpg" /><br/>
 			    <b>Before</b>
@@ -154,7 +154,7 @@ def betterBnW(pic):
                 <div class="col-sm-12">
 		    <div style="color:white">
                        	<h3>Bottom-to-Top Mirror</h3>
-                        <p>About this item</p>
+                        <p>This simple filter takes all of the pixels on the bottom half of an image and mirrors them across the horizontal center line of the image.  Similar to the way we inverted color values to achieve our negative effect, here we use the difference between a pixel's Y coordinate and the total height of the image to determine where it should be "flipped" to.</p>
 			<p style="text-align:center">
 			    <img src="cst205/img/mirrorHorizontalInverse-original.jpg" /><br/>
 			    <b>Before</b>
