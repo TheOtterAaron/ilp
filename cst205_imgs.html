@@ -183,7 +183,7 @@ def mirrorHorizontalInverse(pic):
                 <div class="col-sm-12">
 		    <div style="color:white">
                        	<h3>Shrink</h3>
-                        <p>About this item</p>
+                        <p>This is a simple routine that reduces the size of an image by half.  It works by only copying every second pixel from the original image into a new, blank image.  The pixels are skipped by simply doubling the X and Y coordinates of the smaller image when selecting a pixel from the original image to copy.</p>
 			<p style="text-align:center">
 			    <img src="cst205/img/shrink-original.jpg" /><br/>
 			    <b>Before</b>
@@ -212,7 +212,7 @@ def shrink(pic):
                 <div class="col-sm-12">
 		    <div style="color:white">
                        	<h3>Collage</h3>
-                        <p>About this item</p>
+                        <p>This is a collage made from multiple images programmatically layered ontop of one another.  Of note is that many of the above filters have been applied to the images in this collage.</p>
 			<p style="text-align:center">
 			    <img src="cst205/img/collage.jpg" />
 			</p>
@@ -289,7 +289,7 @@ collage = copyPlace(roseColoredGlasses(tent), collage, 2200, 1000)
                 <div class="col-sm-12">
 		    <div style="color:white">
                        	<h3>Red-Eye Reduction</h3>
-                        <p>About this item</p>
+                        <p>This is a filter for reducing red-eye in photographs.  The base routine takes an (x,y) coordinate in the image and a radius to approximate the shape of the pupil.  Each pixel within this circular region is then checked for similarity to a pure red color using geometric distance, where the threshold parameter determines the level of "redness" in a pixel required for further processing to apply.  Any pixels which pass the threshold test then have their red channel reduced according to the amount parameter.  The program repeats this process for a user-selected number of eyes.</p>
 			<p style="text-align:center">
 			    <img src="cst205/img/redeye-original.jpg" /><br/>
 			    <b>Before</b>
@@ -347,7 +347,7 @@ for i in range(0, input("Number of Corrections: ")):
                 <div class="col-sm-12">
 		    <div style="color:white">
                        	<h3>Posterize</h3>
-                        <p>About this item</p>
+                        <p>This filter creates a step-like effect in each of the three color channels of an image.  Red, green and blue values are separated into ranges, and each range is collapsed to a single value.  This results in an almost painterly effect.</p>
 			<p style="text-align:center">
 			    <img src="cst205/img/posterize-original.jpg" /><br/>
 			    <b>Before</b>
@@ -384,7 +384,7 @@ def posterize(pic):
                 <div class="col-sm-12">
 		    <div style="color:white">
                        	<h3>Green Screen</h3>
-                        <p>About this item</p>
+                        <p>This well-known technique measures the geometric distance between a color and a provided "chroma key" (in this case, green!).  Pixels within the provided threshold are then replaced with corresponding pixels from a second image.  This results in a layering effect commonly used in cinema and television to digitally insert actors into virtual scenes.  Difficulties arise near the edge of a subject, where light reflecting off the green screen casts a subtle green glow.  In this simple implementation, careful adjustment of the threshold parameter resulted in an acceptable end result.  Professional green screen software allows for fine tuning of the selection by exposing multiple chroma keys, each with a unique threshold, to provide subtle blending around edges.</p>
 			<p style="text-align:center">
 			    <img src="cst205/img/greenscreen-original1.jpg" /><br/>
 			    <b>Before (Background)</b>
@@ -436,7 +436,7 @@ writePictureTo(pic, output)
                 <div class="col-sm-12">
 		    <div style="color:white">
                        	<h3>Thanksgiving Card</h3>
-                        <p>About this item</p>
+                        <p>This is a "home made" Thanksgiving card.  It uses a technique similar to the Green Screen filter to create solid-colored stencils out of photograpphs (in this instance, photographs of autumnal leaves).  These stencils are then applied to a base image in a random quantity, distribution, color and size.  By varying only the green channel of the stencil's color (leaving red at 255 and blue at 0) leaves stay within a red-orange-yellow family of colors.</p>
 			<p style="text-align:center">
 			    <img src="cst205/img/card.jpg" />
 			</p>
@@ -510,7 +510,7 @@ addTextWithStyle(
                 <div class="col-sm-12">
 		    <div style="color:white">
                        	<h3>Line Art</h3>
-                        <p>About this item</p>
+                        <p>This filter converts an image into something resembling a line drawing or charcoal sketch.  This is achieved by comparing the luminance of each pixel (where luminance is defined as the weighted average used in the Better Black & White filter above) to the luminance of its neighbor pixels.  If the difference between a pixel's luminance and its neighboring pixels' luminance is outside of the provided threshold value, the pixel is made black, otherwise the pixel is made white.</p>
 			<p style="text-align:center">
 			    <img src="cst205/img/lineArt-original.jpg" /><br/>
 			    <b>Before</b>
