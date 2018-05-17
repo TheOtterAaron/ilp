@@ -6,6 +6,6 @@ h2, h3 { font-family: 'raleway'; font-weight: 300; }
 .cover { min-height: 600px; min-height: 100vh; }
 .box { margin: 15% 0; padding: 48px; background-color: #FFF; }
 .box p, ul { font-family: 'open sans'; font-size: 16px; }
+.box ul { margin-bottom: 24px; }
 .box li { padding-top: 12px; }
 .box a { font-weight: bold; }
-.box a:first-of-type { padding-top: 12px; }
