@@ -7,3 +7,5 @@ h2, h3 { font-family: 'raleway'; font-weight: 300; }
 .box { margin: 15% 0; padding: 48px; background-color: #FFF; }
 .box p, ul { font-family: 'open sans'; font-size: 16px; }
 .box li { padding-top: 12px; }
+.box a { font-weight: bold; }
+.box a:first { padding-top: 12px; }
